@@ -3,7 +3,7 @@
 #include <memory.h>
 #include <cstdlib>
 #include <cmath>
-#include <gperftools/profiler.h>
+// #include <gperftools/profiler.h>
 
 #ifdef __unix
 #define fopen_s(pFile,filename,mode) ((*(pFile))=fopen((filename),  (mode)))==NULL
@@ -844,7 +844,7 @@ void free_memory(Sample *test_sample, Sample *train_sample)
 }
 int main()
 {
-    ProfilerStart("LeNet5-profiler.prof");
+    // ProfilerStart("LeNet5-profiler.prof");
     
     log_exec("MAIN");
     double learning_rate = 0.018;
@@ -891,6 +891,6 @@ int main()
     release_layer(&c5_convolution_layer);
     release_layer(&output_layer);
     
-    ProfilerStop();
+    // ProfilerStop();
     return 0;
 }
